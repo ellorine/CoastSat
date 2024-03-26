@@ -108,7 +108,7 @@ if True:
         'inputs': inputs,
     }
         
-    if True:
+    if False:
         
         # [OPTIONAL] preprocess images (cloud masking, pansharpening/down-sampling)
         SDS_preprocess.save_jpg(metadata, settings, use_matplotlib=True)
@@ -162,7 +162,7 @@ if True:
         fig.savefig(os.path.join(inputs['filepath'], inputs['sitename'], 'mapped_shorelines.jpg'),dpi=200)
         
         
-    if False:
+    if True:
         #%% 4. Shoreline analysis
         
         # if you have already mapped the shorelines, load the output.pkl file
@@ -269,7 +269,7 @@ if True:
             # and the datum for the water levels is approx. Mean Sea Level. We assume a beach slope of 0.1 here.
             
             # load the measured tide data
-            filepath = os.path.join(os.getcwd(),'examples','NARRA_tides.csv')
+            filepath = os.fspath(r'')
             tide_data = pd.read_csv(filepath, parse_dates=['dates'])
             dates_ts = [pd.to_datetime(_).to_pydatetime() for _ in tide_data['dates']]
             tides_ts = np.array(tide_data['tide'])
